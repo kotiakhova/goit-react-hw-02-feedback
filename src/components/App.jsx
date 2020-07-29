@@ -51,15 +51,15 @@ export default class FeedbackForm extends Component {
     render() {
       return (
         <>
-        <Section title="Please leave feedback"></Section>
-        <FeedbackOptions 
-            // options={} 
-            onLeaveFeedback={this.handleClick}>
-        </FeedbackOptions>
+        <Section title="Please leave feedback">
+            <FeedbackOptions 
+                // options={} 
+                onLeaveFeedback={this.handleClick}>
+            </FeedbackOptions>
+        </Section>
+
 
         <Section title="Statistics">
-            
-        </Section>
         {this.state.total > 0 ? (
                   <Statistics 
                   good={this.state.good} 
@@ -69,6 +69,9 @@ export default class FeedbackForm extends Component {
                   positivePercentage={this.state.positiveFeedback} 
                   />
         ) : <Notification />}
+            
+        </Section>
+
         </>); 
     }
   }
